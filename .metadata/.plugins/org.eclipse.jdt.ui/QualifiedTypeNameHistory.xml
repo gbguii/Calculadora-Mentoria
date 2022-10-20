@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="br.com.gbgui.calculator.CalculatorView"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="br.com.gbgui.menu.menuView"/>
+    <fullyQualifiedTypeName name="br.com.gbgui.ClassAbove.AbstarctClass"/>
+    <fullyQualifiedTypeName name="br.com.gbgui.imc.ImcView"/>
+    <fullyQualifiedTypeName name="br.com.gbgui.area.AreaView"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="br.com.gbgui.ClassAbove.InterfaceClass"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.com.gbgui.ClassAbove.AbstractClass"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

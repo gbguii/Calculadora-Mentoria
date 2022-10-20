@@ -1,0 +1,34 @@
+package br.com.gbgui.imc;
+
+import br.com.gbgui.ClassAbove.AbstractClass;
+import br.com.gbgui.ClassAbove.InterfaceClass;
+
+public class ImcView extends AbstractClass implements InterfaceClass{
+	
+	public ImcView() {
+		this.init();
+	}
+	
+	@Override
+	public void init() {
+		System.out.println("\n********** IMC **********");
+		this.getValues();
+	}
+	
+	@Override
+	public void getValues() {
+		System.out.print("\nDigite a altura: ");
+		double heightIn = sc.nextDouble();
+		System.out.print("Digite o peso: ");
+		double weightIn = sc.nextDouble();
+	}
+	
+
+	@Override
+	public void calculate(double firstValue, double secondValue, int option) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

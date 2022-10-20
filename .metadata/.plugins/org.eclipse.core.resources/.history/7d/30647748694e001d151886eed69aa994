@@ -1,0 +1,53 @@
+package br.com.gbgui.ClassAbove;
+
+import java.util.Scanner;
+
+import br.com.gbgui.menu.menuView;
+
+public abstract class AbstractClass {
+
+	protected static Scanner sc = new Scanner(System.in);
+	
+	public abstract void init();
+
+	protected void isContinue() {
+		System.out.print("\nDeseja reliazar uma nova conta ? S/N: ");
+		String confirm = sc.next();
+		if (isConfirm(confirm)) {
+			this.init();
+		} else {
+			System.out.print("\nDeseja voltar ao menu inicial ? S/N: ");
+			String confirmToMenu = sc.next();
+			if(isConfirm(confirmToMenu)) {
+				menuView mv = new menuView();
+				System.out.println("saiu");
+			}
+		}
+	}
+	
+	private boolean isConfirm(String value) {
+		boolean result = false;
+		if (!value.isEmpty() || value != null) {
+			if (value.equalsIgnoreCase("s") || value.equalsIgnoreCase("sim")) {
+				result = true;
+			}
+		}
+		return result;
+	}
+	
+	protected String defineNumberFormat(Double value) {
+		String result = "";
+		if (value != null) {
+			String valueToString = value.toString();
+			if (valueToString.endsWith(".00")) {
+				result = valueToString.replace(".00", "");
+			}else if(valueToString.endsWith(".0")){
+				result = valueToString.replace(".0", "");
+			}
+			else {
+				result = String.format("%.2f", value);
+			}
+		}
+		return result;
+	}
+}

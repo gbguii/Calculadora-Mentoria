@@ -1,0 +1,40 @@
+package br.com.gbgui.area;
+
+import java.util.Arrays;
+import java.util.List;
+
+import br.com.gbgui.ClassAbove.AbstractClass;
+import br.com.gbgui.ClassAbove.InterfaceClass;
+
+public class AreaView extends AbstractClass implements InterfaceClass{
+	private static List<String> optionsArea = Arrays.asList("Circulo", "Quadrado", "Retângulo");
+	
+	
+	public AreaView() {
+		System.out.println("\n********** Area **********");
+		this.init();
+	}
+
+	@Override
+	public void init() {
+		boolean repeat = true;
+		while (repeat) {
+			try {
+				
+			} catch (Exception e) {
+			}
+		}
+	}
+
+	@Override
+	public void getValues() {
+		
+	}
+
+	@Override
+	public void calculate(Double firstValue, Double secondValue, int option) {
+		
+	}
+	
+	
+}

@@ -1,0 +1,53 @@
+package br.com.gbgui.imc;
+
+import br.com.gbgui.ClassAbove.AbstractClass;
+import br.com.gbgui.ClassAbove.InterfaceClass;
+
+public class ImcView extends AbstractClass implements InterfaceClass{
+	
+	Double height = 0.0;
+	Double weight = 0.0;
+	
+	public ImcView() {
+		this.init();
+	}
+	
+	@Override
+	public void init() {
+		System.out.println("\n********** IMC **********");
+		this.getValues();
+		this.calculate(height, weight, 0);
+	}
+	
+	@Override
+	public void getValues() {
+		boolean repeat = true;
+		while (repeat) {
+			try {
+				System.out.print("\nDigite a altura: (ex 1,73)  ");
+				height = sc.nextDouble();
+				System.out.print("Digite o peso: (ex 76,90) ");
+				weight = sc.nextDouble();
+				if(height < 0 || weight < 0) {
+					throw new Exception();
+				}
+				repeat = false;
+			} catch (Exception e) {
+				sc.nextLine();
+				System.out.println("\nops.. esse valor não é permitido");
+			}
+		}
+	}
+	
+	public void setDegree() {
+		
+	}
+	
+	@Override
+	public void calculate(Double firstValue, Double secondValue, int option) {
+		// firstValue = height  --  secondValue = weight
+		double result = secondValue / (Math.pow(firstValue, 2));
+	}
+	
+	
+}

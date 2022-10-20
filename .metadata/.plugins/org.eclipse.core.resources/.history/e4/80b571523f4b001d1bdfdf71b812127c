@@ -1,0 +1,32 @@
+package br.com.gbgui.imc;
+
+import br.com.gbgui.ClassAbove.AbstarctClass;
+
+public class ImcView extends AbstarctClass{
+	
+	Double height;
+	Double weight;
+	String result;
+	public ImcView() {
+		this.init();
+	}
+	
+	@Override
+	protected void init() {
+		this.getValues();
+	}
+	
+	private void getValues() {
+		System.out.print("Digite a altura: ");
+		double heightIn = sc.nextDouble();
+		System.out.println("Digite o peso: ");
+		double weightIn = sc.nextDouble();
+		this.height = heightIn;
+		this.weight = weightIn;
+	}
+	
+	private void calculateImc() {
+		
+	}
+	
+}

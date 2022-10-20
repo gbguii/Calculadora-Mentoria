@@ -1,0 +1,6 @@
+package br.com.gbgui.ClassAbove;
+
+public interface InterfaceClass {
+	public  void calculo(double firstValue, double secondValue);
+	
+}

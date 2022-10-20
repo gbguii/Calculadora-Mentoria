@@ -1,0 +1,82 @@
+package br.com.gbgui.area;
+
+import java.util.Arrays;
+import java.util.List;
+
+import br.com.gbgui.ClassAbove.AbstractClass;
+
+public class AreaView extends AbstractClass{
+	private static List<String> optionsArea = Arrays.asList("Circulo", "Quadrado", "Retângulo");
+	
+	
+	public AreaView() {
+		this.init();
+	}
+
+	@Override
+	public void init() {
+		System.out.println("\n********** Area **********");
+		this.selectOption();
+	}
+	
+	private void selectOption() {
+		System.out.println("Selecione a opção:");
+		this.printOptions();
+		System.out.print("Digite a opção: ");
+		int option = sc.nextInt();
+		this.optionSelected(option);
+	}
+	
+	private void printOptions() {
+		for(int i = 0; i<optionsArea.size(); i++) {
+			System.out.println(i+1 +" - " + optionsArea.get(i));
+		}
+	}
+	
+	private void optionSelected(int option) {
+		switch (option) {
+		case 1:
+			this.circleArea();
+			break;
+		case 2:
+			this.squareArea();
+			break;
+		case 3:
+			this.areaRectangle();
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void circleArea() {
+		Double pi = 3.1415926535898;
+		System.out.print("Qual o raio do circulo? ");
+		double radius = sc.nextDouble();
+		double result = pi * (Math.pow(radius, 2));
+		String toString = this.defineNumberFormat(result);
+		System.out.println("Area do Circulo: "+ toString);
+		this.isContinue();
+	}
+
+	private void squareArea() {
+		System.out.print("Qual é o valor do lado?  ");
+		double base = sc.nextDouble();
+		double result = Math.pow(base, 2);
+		String toString = this.defineNumberFormat(result);
+		System.out.println("Area do Quadrado: "+ toString);
+		this.isContinue();
+	}
+
+	private void areaRectangle() {
+		System.out.print("Qual é o valor da altura?  ");
+		double height = sc.nextDouble();
+		System.out.print("Qual o valor da base? ");
+		double base = sc.nextDouble();
+		double result = height * base;
+		String toString = this.defineNumberFormat(result);
+		System.out.println("Area do Retangulo: "+ toString);
+		this.isContinue();
+	}
+	
+}

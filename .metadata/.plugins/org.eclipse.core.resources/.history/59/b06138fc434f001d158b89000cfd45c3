@@ -1,0 +1,66 @@
+package br.com.gbgui.calculator;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+import br.com.gbgui.ClassAbove.AbstractClass;
+import br.com.gbgui.ClassAbove.InterfaceClass;
+
+public class CalculatorView extends AbstractClass implements InterfaceClass{
+	
+	private static List<String> optionsCalculator = Arrays.asList("Soma", "Subtração", "Multiplicação", "Divisão",
+			"Potenciação");
+	
+	private Double firstValue;
+	private Double secondValue;
+
+	public CalculatorView() {
+		System.out.println("\n********** Calculadora **********");
+		this.init();
+	}
+	
+	@Override
+	public void init() {
+		boolean control = false;
+		while(!control) {
+			this.printOptions(optionsCalculator);
+			try {
+				Scanner nsc = new Scanner(System.in);
+				optionSelected = nsc.nextInt();
+				if(optionSelected <= 0 || optionSelected > optionsCalculator.size()) {
+					throw new Exception();
+				}
+				control = true;
+			} catch (Exception e) {
+				optionSelected = 0;
+				System.out.println("ops... essa opção não existe");
+			}finally {
+				sc.close();
+			}
+		}
+		this.getValues();
+	}
+	
+	@Override
+	public void getValues() {
+		 
+	}
+	
+	@Override
+	public void calculate(double firstValue, double secondValue, int option) {
+		if(option == 1) {
+			double result = firstValue + secondValue;
+		}else if(option == 2) {
+			double result = firstValue - secondValue;
+		}else if(option == 3) {
+			double result = firstValue * secondValue;
+		}else if(option == 4) {
+			double result = firstValue / secondValue;
+		}else if(option == 5) {
+			double result = Math.pow(firstValue, secondValue);
+		}
+	}
+
+
+}

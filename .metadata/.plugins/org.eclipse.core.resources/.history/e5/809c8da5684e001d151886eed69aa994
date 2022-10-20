@@ -1,0 +1,18 @@
+package br.com.gbgui.menu;
+
+import br.com.gbgui.area.AreaView;
+import br.com.gbgui.calculator.CalculatorView;
+import br.com.gbgui.imc.ImcView;
+
+public class menuView {
+	
+	public static void main(String[] args) {
+		init();
+		AreaView iv = new AreaView();
+	}
+	
+	public static void init() {
+		
+	}
+	
+}

@@ -1,0 +1,6 @@
+package br.com.gbgui.ClassAbove;
+
+public interface InterfaceClass {
+	public void getValues();
+	public void calculate(double firstValue, double secondValue, int option);
+}

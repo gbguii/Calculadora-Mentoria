@@ -1,0 +1,81 @@
+package br.com.gbgui.area;
+
+import java.util.Arrays;
+import java.util.List;
+
+import br.com.gbgui.ClassAbove.AbstractClass;
+import br.com.gbgui.ClassAbove.InterfaceClass;
+
+public class AreaView extends AbstractClass implements InterfaceClass{
+	private static List<String> optionsArea = Arrays.asList("Circulo", "Quadrado", "Retângulo");
+	
+	Double radius = 0.0;
+	Double height = 0.0;
+	Double base = 0.0;
+	
+	public AreaView() {
+		System.out.println("\n********** Area **********");
+		this.init();
+	}
+
+	@Override
+	public void init() {
+		boolean repeat = true;
+		while (repeat) {
+			try {
+				this.printOptions(optionsArea);
+				this.optionSelected = sc.nextInt();
+				if(this.optionSelected < 0 || this.optionSelected > optionsArea.size()) {
+					throw new Exception();
+				}
+				repeat = false;
+			} catch (Exception e) {
+				sc.nextLine();
+				System.out.println("ops... essa opção não existe");
+			}
+		}
+		this.getValues();
+	}
+
+	@Override
+	public void getValues() {
+		boolean repeat = true;
+		while (repeat) {
+			try {
+				if(this.optionSelected == 1) {
+					System.out.print("Digite o raio do circulo: ");
+					this.radius = sc.nextDouble();
+					this.calculate(Math.PI, radius, optionSelected);
+				}else if(this.optionSelected == 2) {
+					System.out.print("Qual a altura do quadrado: ");
+					this.height = sc.nextDouble();
+					this.calculate(height, height, optionSelected);
+				}else if(this.optionSelected == 2) {
+					System.out.print("Qual a altura do retangulo: ");
+					this.height = sc.nextDouble();
+					System.out.print("Qual é a base do retangulo: ");
+					this.base = sc.nextDouble();
+					this.calculate(height, base, optionSelected);
+				}
+			} catch (Exception e) {
+				sc.nextLine();
+				System.out.println("\nopps.. esse valor não é válido");
+			}
+		}
+	}
+
+	@Override
+	public void calculate(Double firstValue, Double secondValue, int option) {
+		if(option == 1) {
+			// firstValue == PI   -  secondValue = radius.
+			Double result = firstValue * (Math.pow(secondValue, 2));
+		}else if(option == 2) {
+			// firstValue == height   -  secondValue = height.
+			Double result = firstValue * secondValue;
+		}else if(option == 3) {
+			
+		}
+	}
+	
+	
+}
